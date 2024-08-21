@@ -34,11 +34,12 @@ Relighting an object is a task where an object or an image is captured in a part
 To develop this model, we fine tuned Stable Diffusion 2.1 (https://huggingface.co/stabilityai/stable-diffusion-2-1 ). For doing so, we modified the script published by the authors of Marigold (https://github.com/prs-eth/Marigold ), since it was comprehensive and tackled a problem very similar to ours.  We have provided the modified codebase for the same. 
 
 Using the code
-Downloading the Objaverse objects: This is simply done by running the download_objaverse.py script. To further filter the quality of downloaded objects, we can add conditions to the annotations. At the moment, the only two conditions are the animation count set to 0 and the object is categorized in at least one annotation category. 
+
+*Downloading the Objaverse objects*: This is simply done by running the download_objaverse.py script. To further filter the quality of downloaded objects, we can add conditions to the annotations. At the moment, the only two conditions are the animation count set to 0 and the object is categorized in at least one annotation category. 
 
 We can also create our own uid list by filtering from all the uids that are loaded using ‘objaverse.load_uids()’. For this version, we use the LVIS annotation list provided by the objaverse team as it contains relatively higher quality object files.  
 
-Dataset Generation: Rendering the objects is a very important part of this project, as generating a high quality dataset is crucial before starting to train a neural network. Ideally, the current dataset is subpar and requires improvement. Either way, we provide a thorough script to render a dataset and arguments can be varied to get a more desirable outcome. 
+*Dataset Generation*: Rendering the objects is a very important part of this project, as generating a high quality dataset is crucial before starting to train a neural network. Ideally, the current dataset is subpar and requires improvement. Either way, we provide a thorough script to render a dataset and arguments can be varied to get a more desirable outcome. 
 
 
 Firstly, make sure that Blender 3.6 LTS is installed in the system. Then we can run the script blender_render_script_Era3D.py, which is a modified version of the blender script published by the authors of Era3D.  The terminal command to run this script in the background with the necessary arguments is: 
@@ -47,7 +48,7 @@ blender -b -P D:/CJ/MyBlender/blender_render_script_era3D.py -- --output_dir D:/
 
 Make sure to change the osroot and objroot in the main. osroot is where the project is located and objroot is where the objects are placed. Other aspects like resolution can be modified by modifying the code. Most of the variables are placed in the first few lines. (Not the most sophisticated code, but it works fine). A subset of the dataset is available at https://1drv.ms/u/s!Akayu_8VtzKCgm00ngsk9sJkYmLJ?e=CILchb. 
 
-Fine-Tuning  the Neural Network:  The directory Marigold_relight is where the training code is placed. Most of it is derived from the code published by authors of Marigold. 
+*Fine-Tuning  the Neural Network*:  The directory Marigold_relight is where the training code is placed. Most of it is derived from the code published by authors of Marigold. 
 
 First, make sure that all paths inside the script are correctly modified to the paths of the current system (I again apologize for not having a code sophisticated enough for using a single path, it is chaotic). 
 
@@ -60,7 +61,7 @@ export BASE_CKPT_DIR=~/remote-dir/Marigold_relight/checkpoints
 Finally, you can setup the config with accelerate config and start the training with,
 accelerate launch train.py --config config/train_marigold.yaml .
 
- If required, make the necessary changes in the config files placed in ‘config’ directory. To run this without wandb, make sure to add the argument –no_wand to the accelerate launch command. The output is visualized in the output/visualization directory.
+If required, make the necessary changes in the config files placed in ‘config’ directory. To run this without wandb, make sure to add the argument –no_wand to the accelerate launch command. The output is visualized in the output/visualization directory.
 
 Conclusion
 
