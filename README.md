@@ -45,7 +45,7 @@ Firstly, make sure that Blender 3.6 LTS is installed in the system. Then we can 
 
 blender -b -P D:/CJ/MyBlender/blender_render_script_era3D.py -- --output_dir D:/CJ/MyBlender/new_folder1 --engine CYCLES
 
-Make sure to change the osroot and objroot in the main. osroot is where the project is located and objroot is where the objects are placed. Other aspects like resolution can be modified by modifying the code. Most of the variables are placed in the first few lines. (Not the most sophisticated code, but it works fine). 
+Make sure to change the osroot and objroot in the main. osroot is where the project is located and objroot is where the objects are placed. Other aspects like resolution can be modified by modifying the code. Most of the variables are placed in the first few lines. (Not the most sophisticated code, but it works fine). A subset of the dataset is available at https://1drv.ms/u/s!Akayu_8VtzKCgm00ngsk9sJkYmLJ?e=CILchb. 
 
 Fine-Tuning  the Neural Network:  The directory Marigold_relight is where the training code is placed. Most of it is derived from the code published by authors of Marigold. 
 
