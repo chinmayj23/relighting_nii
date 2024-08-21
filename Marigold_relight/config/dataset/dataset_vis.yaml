@@ -1,0 +1,22 @@
+dataset:
+  vis:
+  - name: custom
+    prob_ls: [0.9, 0.1]
+    #filenames: data_split/hypersim/filename_list_train_filtered.txt
+    disp_name: objaverse_vis
+    dir: ./objaverse_relight_data/test
+    # dataset_list:
+    # - name: hypersim
+    #   disp_name: hypersim_train
+    #   dir: hypersim/hypersim_processed_train.tar
+      # filenames: data_split/hypersim/filename_list_train_filtered.txt
+    resize_to_hw:
+      - 512
+      - 512
+  # - name: hypersim
+  #   disp_name: hypersim_vis
+  #   dir: D:/CJ/Marigold/data/Hypersim/processed/val
+  #   filenames: data_split/hypersim/selected_vis_sample.txt
+  #   resize_to_hw:
+  #   - 480
+  #   - 640
