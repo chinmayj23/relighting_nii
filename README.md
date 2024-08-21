@@ -55,8 +55,8 @@ First, make sure that all paths inside the script are correctly modified to the 
 Secondly, make sure to download the pre-trained model weights and place it in the checkpoints directory. We used weights from stable diffusion 2.1 - https://huggingface.co/stabilityai/stable-diffusion-2. 
 
 Then we must install the requirements in ‘req.txt’ and export data directory and checkpoint directory to the environment, with the following commands:
-export BASE_DATA_DIR=~/remote-dir/Marigold_relight/data
-export BASE_CKPT_DIR=~/remote-dir/Marigold_relight/checkpoints
+export BASE_DATA_DIR=home/remote-dir/Marigold_relight/data
+export BASE_CKPT_DIR=home/remote-dir/Marigold_relight/checkpoints
 
 Finally, you can setup the config with accelerate config and start the training with,
 accelerate launch train.py --config config/train_marigold.yaml .
