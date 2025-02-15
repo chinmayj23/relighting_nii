@@ -1,5 +1,5 @@
 # relighting_nii
-Project pursued @ National institute if Informatics, Tokyo
+Project pursued @ National institute of Informatics, Tokyo
 
 Internship student: Chinmay Joshi (Saarland University)
 Supervisor: Prof. Satoshi Ikehata (National Institute of Informatics)
